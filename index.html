@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investment Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="nav">
+          <div class="logo"><a href="./index.html">LOGO</a></div>
+          <ul>
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#instructions">Instructions</a></li>
+            <li><a href="#accounts">Accounts</a></li>
+            <li><a href="#platforms">Platforms</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div class="nav-actions">
+            <div class="language-selector" onclick="toggleDropdown()">
+              <span id="selected-lang">EN</span>
+              <span>▼</span>
+              <div class="dropdown" id="language-dropdown">
+                <button onclick="setLanguage('EN')">EN</button>
+                <button onclick="setLanguage('UA')">UA</button>
+              </div>
+            </div>
+            <button class="btn-primary btn-header">SIGN IN FOR FREE</button>
+            <div class="menu-icon" onclick="toggleMobileMenu()">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </nav>
+        <div class="mobile-nav" id="mobile-nav">
+          <ul>
+            <li><a href="./index.html">How it works</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#instructions">Instructions</a></li>
+            <li><a href="#accounts">Accounts</a></li>
+            <li><a href="#platforms">Platforms</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <button class="btn-primary btn-header mobile">
+            SIGN IN FOR FREE
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section class="banner">
+      <div class="container">
+        <div class="banner-container">
+          <div class="banner-text">
+            <h1>Trade everywhere. Invest here!</h1>
+            <p>
+              We provide only the best trading software. The trading terminal
+              MetaTrader4 is the most popular and convenient platform for access
+              to global exchanges. You can work anywhere.
+            </p>
+            <a href="#" class="btn-primary btn-banner">START TRADING</a>
+          </div>
+          <div class="banner-image">
+            <img
+              class="banner-img"
+              src="./img/graf.png"
+              alt="Graph illustration"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps">
+      <div class="container">
+        <h2 class="title">Getting Started Is</h2>
+        <h2 class="title"><span class="highlight">Fast & Easy</span></h2>
+        <div class="step-container-left">
+          <div class="step-box box-right">
+            <p>01.</p>
+            <h3>Register</h3>
+            <p>
+              Complete the simple registration to get your trading credentials.
+            </p>
+          </div>
+          <div class="border-box-right"></div>
+        </div>
+
+        <div class="step-container-right">
+          <div class="step-box box-left">
+            <p>02.</p>
+            <h3>Verification</h3>
+            <p>
+              Big Invest is required to verify your identity, upload your
+              documents quickly and get approved in minutes.
+            </p>
+          </div>
+          <div class="border-box-left"></div>
+        </div>
+        <div class="step-container-left">
+          <div class="step-box box-right">
+            <p>03.</p>
+            <h3>Deposit funds</h3>
+            <p>
+              Big Invest accepts credit cards and bank wires. Just use the
+              secure deposit form and follow the steps.
+            </p>
+          </div>
+          <div class="border-box-right"></div>
+        </div>
+        <div class="step-container-right">
+          <div class="step-box box-left">
+            <p>04.</p>
+            <h3>Start Trading</h3>
+            <p>
+              Once your deposit has been credited, you can begin trading
+              instantly. In no time you will see profits rolling into your
+              account.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="testimonials">
+          <div class="testimonial-header">
+            <h2 class="title">People love Big</h2>
+            <h2 class="title"><span class="highlight">Invest</span></h2>
+            <div class="controls">
+              <button id="prevBtn">‹</button>
+              <button id="nextBtn">›</button>
+            </div>
+          </div>
+
+          <div class="testimonial-container">
+            <div class="testimonial-content">
+              <div class="testimonial" id="testimonial-1">
+                <img src="./img/icon.png" alt="User 1" class="user-photo" />
+                <div class="testimonial-text">
+                  <p class="quote">
+                    “This magical product actually works! It has radically
+                    changed the way we build our audiences. Increasing new
+                    customer sales by 6x in our most mature market.”
+                  </p>
+                  <p class="author">Albert Abello</p>
+                  <p class="position">Director of Growth</p>
+                </div>
+              </div>
+              <div class="testimonial" id="testimonial-2">
+                <img src="./img/icon.png" alt="User 2" class="user-photo" />
+                <div class="testimonial-text">
+                  <p class="quote">
+                    “Absolutely love it! The platform is intuitive and provides
+                    the best results for our business.”
+                  </p>
+                  <p class="author">Jane Doe</p>
+                  <p class="position">Marketing Manager</p>
+                </div>
+              </div>
+              <div class="testimonial" id="testimonial-3">
+                <img src="./img/icon.png" alt="User 3" class="user-photo" />
+                <div class="testimonial-text">
+                  <p class="quote">
+                    “Highly recommended. The best investment tool we’ve used so
+                    far. Great support team too!”
+                  </p>
+                  <p class="author">John Smith</p>
+                  <p class="position">CEO, FinTech Co.</p>
+                </div>
+              </div>
+              <div class="testimonial" id="testimonial-4">
+                <img src="./img/icon.png" alt="User 4" class="user-photo" />
+                <div class="testimonial-text">
+                  <p class="quote">
+                    “Helped us scale our company to new heights. The analytics
+                    and trading tools are game-changers.”
+                  </p>
+                  <p class="author">Emma Wilson</p>
+                  <p class="position">CTO, StartUp X</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="testimonial-counter">
+                <span id="currentIndex">01</span> / 04
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container">
+        <h2 class="title">Frequently asked</h2>
+        <h2 class="title"><span class="highlight">questions</span></h2>
+        <div class="faq-container">
+
+  
+          <div class="faq">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h2 class="faq-title">How do I change my details?</h2>
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We provide only the best trading software. The trading terminal
+                MetaTrader4 is the most popular and convenient platform for access
+                to global exchanges. You can work anywhere. All you need is the
+                Internet because the necessary trading tools are already collected
+                in one place and are available in a couple of clicks. Use only the
+                best and develop with us!
+              </p>
+            </div>
+          </div>
+  
+          <div class="faq">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h2 class="faq-title">What platforms will I be able to use?</h2>
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We provide only the best trading software. The trading terminal
+                MetaTrader4 is the most popular and convenient platform for access
+                to global exchanges. You can work anywhere. All you need is the
+                Internet because the necessary trading tools are already collected
+                in one place and are available in a couple of clicks. Use only the
+                best and develop with us!
+              </p>
+            </div>
+          </div>
+  
+          <div class="faq">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h2 class="faq-title">How do I change my details?</h2>
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We provide only the best trading software. The trading terminal
+                MetaTrader4 is the most popular and convenient platform for access
+                to global exchanges. You can work anywhere. All you need is the
+                Internet because the necessary trading tools are already collected
+                in one place and are available in a couple of clicks. Use only the
+                best and develop with us!
+              </p>
+            </div>
+          </div>
+  
+          <div class="faq">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h2 class="faq-title">How do I change my details?</h2>
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We provide only the best trading software. The trading terminal
+                MetaTrader4 is the most popular and convenient platform for access
+                to global exchanges. You can work anywhere. All you need is the
+                Internet because the necessary trading tools are already collected
+                in one place and are available in a couple of clicks. Use only the
+                best and develop with us!
+              </p>
+            </div>
+          </div>
+          <div class="faq">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h2 class="faq-title">How do I change my details?</h2>
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We provide only the best trading software. The trading terminal
+                MetaTrader4 is the most popular and convenient platform for access
+                to global exchanges. You can work anywhere. All you need is the
+                Internet because the necessary trading tools are already collected
+                in one place and are available in a couple of clicks. Use only the
+                best and develop with us!
+              </p>
+            </div>
+          </div>
+          <div class="faq">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h2 class="faq-title">How do I change my details?</h2>
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We provide only the best trading software. The trading terminal
+                MetaTrader4 is the most popular and convenient platform for access
+                to global exchanges. You can work anywhere. All you need is the
+                Internet because the necessary trading tools are already collected
+                in one place and are available in a couple of clicks. Use only the
+                best and develop with us!
+              </p>
+            </div>
+          </div>
+          <div class="faq">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h2 class="faq-title">How do I change my details?</h2>
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We provide only the best trading software. The trading terminal
+                MetaTrader4 is the most popular and convenient platform for access
+                to global exchanges. You can work anywhere. All you need is the
+                Internet because the necessary trading tools are already collected
+                in one place and are available in a couple of clicks. Use only the
+                best and develop with us!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- contact-section -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-container">
+          <div class="contact-info">
+            <h2>Contact us!</h2>
+            <p>
+              The support staff and customer service are available to help you
+              with any questions or needs you might have. Just drop us a line.
+            </p>
+            <p>This site is owned and operated by Kode Tech Solutions LTD</p>
+            <p>
+              <strong>Phone:</strong><br />
+              442038857261
+            </p>
+            <p>
+              <strong>Email:</strong><br />
+              <a href="mailto:help@google.com">help@google.com</a>
+            </p>
+            <p>
+              <strong>Address:</strong><br />
+              Trust Company Complex, Ajeltake Road, Ajeltake Island, Majuro,
+              Republic of the Marshall Islands, MH 96960
+            </p>
+          </div>
+
+          <div class="contact-form-container">
+            <form id="contactForm">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                required
+              />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Message"
+                required
+              ></textarea>
+              <button type="submit" class="btn-primary btn-contact">
+                SEND
+              </button>
+              <p class="error-message" id="errorMessage"></p>
+              <p class="success-message" id="successMessage"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-logo">
+            <h1>LOGO</h1>
+          </div>
+          <div class="footer-info">
+            <h2>Information and high risk warning:</h2>
+            <p>
+              Trading with foreign exchange (FX), contract for differences
+              (CFDs) and precious metals carries a high level of risk...
+            </p>
+          </div>
+          <div class="footer-info">
+            <h2>Legal disclaimer:</h2>
+            <p>
+              Forex trading entails significant risks and is not appropriate for
+              all investors...
+            </p>
+          </div>
+          <div class="footer-navigation">
+            <ul>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Instructions</a></li>
+              <li><a href="#">Platforms</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Sign in</a></li>
+              <li><a href="#">Sign up for free</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-container-bottom">
+            <nav class="footer-bottom-links">
+              <p class="copyright">
+                Copyright &copy; 2024, All Rights Reserved
+              </p>
+              <a href="#">Terms and Conditions</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Risk Warnings</a>
+              <a href="#">Anti-Money Laundering</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
