@@ -369,24 +369,24 @@ header {
 
 .border-box-right {
     width: 400px;
-    height: 100px;
+    height: 150px;
     border-top: 5px dotted rgba(102, 64, 240, 0.8);
     border-right: 5px dotted rgba(102, 64, 240, 0.8);
     border-radius: 0 50px 0 0;
     position: absolute;
     left: 450px;
-    top: 220px;
+    top: 200px;
     transform: translateY(-50%);
 }
 
 .border-box-left {
     width: 400px;
-    height: 100px;
+    height: 150px;
     border-top: 5px dotted rgba(102, 64, 240, 0.8);
     border-left: 5px dotted rgba(102, 64, 240, 0.8);
     border-radius: 50px 0 0 0;
     position: absolute;
-    top: 130px;
+    top: 150px;
     left: 240px;
 }
 
@@ -695,7 +695,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
+    
 }
 
 form {
@@ -716,6 +716,7 @@ textarea {
     line-height: 26px;
     font-family: 'Montserrat', sans-serif;
     transition: all 0.3s ease-in-out;
+    resize: vertical;
 }
 
 input:focus,
