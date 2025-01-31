@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Investment Platform</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -26,21 +28,22 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
           <div class="nav-actions">
-            <div class="language-selector" onclick="toggleDropdown()">
-              <span id="selected-lang">EN</span>
-              <span>▼</span>
-              <div class="dropdown" id="language-dropdown">
-                <button onclick="setLanguage('EN')">EN</button>
-                <button onclick="setLanguage('UA')">UA</button>
-              </div>
+            <div class="language-selector">
+                <span id="selected-lang">EN</span>
+                <span>▼</span>
+                <div class="dropdown" id="language-dropdown">
+                    <button>EN</button>
+                    <button>UA</button>
+                </div>
             </div>
             <button class="btn-primary btn-header">SIGN IN FOR FREE</button>
             <div class="menu-icon" onclick="toggleMobileMenu()">
-              <span></span>
-              <span></span>
-              <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-          </div>
+        </div>
+        
         </nav>
         <div class="mobile-nav" id="mobile-nav">
           <ul>
@@ -86,12 +89,14 @@
     <section class="steps">
       <div class="container">
         <h2 class="title">Getting Started Is</h2>
-        <h2 class="title title-bottom"><span class="highlight">Fast & Easy</span></h2>
+        <h2 class="title title-bottom">
+          <span class="highlight">Fast & Easy</span>
+        </h2>
         <div class="step-container-left step-top step-top-mobile">
           <div class="step-box box-right">
-            <p>01.</p>
-            <h3>Register</h3>
-            <p>
+            <p class="number">01.</p>
+            <h3 class="step-box-title">Register</h3>
+            <p class="step-box-description">
               Complete the simple registration to get your trading credentials.
             </p>
           </div>
@@ -100,9 +105,9 @@
 
         <div class="step-container-right step-bottom">
           <div class="step-box box-left">
-            <p>02.</p>
-            <h3>Verification</h3>
-            <p>
+            <p class="number">02.</p>
+            <h3 class="step-box-title">Verification</h3>
+            <p class="step-box-description">
               Big Invest is required to verify your identity, upload your
               documents quickly and get approved in minutes.
             </p>
@@ -111,9 +116,9 @@
         </div>
         <div class="step-container-left step-bottom-two">
           <div class="step-box box-right">
-            <p>03.</p>
-            <h3>Deposit funds</h3>
-            <p>
+            <p class="number">03.</p>
+            <h3 class="step-box-title">Deposit funds</h3>
+            <p class="step-box-description">
               Big Invest accepts credit cards and bank wires. Just use the
               secure deposit form and follow the steps.
             </p>
@@ -122,9 +127,9 @@
         </div>
         <div class="step-container-right step-bottom-three">
           <div class="step-box box-left">
-            <p>04.</p>
-            <h3>Start Trading</h3>
-            <p>
+            <p class="number">04.</p>
+            <h3 class="step-box-title">Start Trading</h3>
+            <p class="step-box-description">
               Once your deposit has been credited, you can begin trading
               instantly. In no time you will see profits rolling into your
               account.
@@ -459,33 +464,16 @@
 
           <div class="contact-form-container">
             <form id="contactForm">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Name"
-                required
-              />
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Email"
-                required
-              />
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Message"
-                required
-              ></textarea>
-              <button type="submit" class="btn-primary btn-contact">
+              <input type="text" id="name" name="name" placeholder="Name" required />
+              <input type="email" id="email" name="email" placeholder="Email" required />
+              <textarea id="message" name="message" placeholder="Message" required></textarea>
+              <button type="submit" class="btn-primary btn-contact" id="submitBtn" disabled>
                 SEND
               </button>
-              <p class="error-message" id="errorMessage"></p>
-              <p class="success-message" id="successMessage"></p>
+              <p class="error-message" id="emailError"></p>
             </form>
           </div>
+          
         </div>
       </div>
     </section>

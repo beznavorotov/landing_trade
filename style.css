@@ -69,18 +69,16 @@ header {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 10px;
+    cursor: pointer;
+    padding: 10px 15px;
     border: 2px solid #333;
     border-radius: 30px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 10px 20px;
     background: white;
-    width: 80px;
+    font-weight: bold;
 }
 
-.language-selector .dropdown {
+.dropdown {
     display: none;
     position: absolute;
     top: 100%;
@@ -89,14 +87,12 @@ header {
     background: white;
     border: 1px solid #333;
     border-radius: 5px;
-    overflow: hidden;
     z-index: 10;
 }
 
-.language-selector .dropdown button {
+.dropdown button {
     width: 100%;
     padding: 8px;
-    text-align: center;
     border: none;
     background: white;
     cursor: pointer;
@@ -104,8 +100,12 @@ header {
     font-weight: bold;
 }
 
-.language-selector .dropdown button:hover {
+.dropdown button:hover {
     background: #eee;
+}
+
+.show {
+    display: block;
 }
 
 .btn-primary {
@@ -200,7 +200,6 @@ header {
     display: flex;
     flex-direction: column;
     gap: 15px;
-
 }
 
 .mobile-nav ul li a {
@@ -236,7 +235,6 @@ header {
     font-weight: bold;
     margin-bottom: 20px;
     line-height: 72px;
-
 }
 
 .banner-text p {
@@ -277,7 +275,6 @@ header {
 .steps {
     margin-top: 80px;
     position: relative;
-
 }
 
 .title {
@@ -301,7 +298,6 @@ header {
     align-items: center;
     justify-content: flex-start;
     position: relative;
-
 }
 
 .step-container-right {
@@ -330,10 +326,36 @@ header {
     justify-content: flex-start;
 }
 
+.number {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    line-height: auto;
+    font-weight: 700;
+    color: #6248FF;
+    margin-bottom: 8px;
+}
+
+.step-box-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: auto;
+    color: #333333;
+    margin-bottom: 24px;
+}
+
+.step-box-description {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    color: #4F4F4F;
+}
+
+
 .box-left {
     display: flex;
     justify-content: flex-end;
-
 }
 
 .border-box-right {
@@ -429,8 +451,6 @@ header {
     align-items: center;
     min-width: 100%;
     box-sizing: border-box;
-
-
 }
 
 .testimonial-header {
@@ -454,11 +474,9 @@ header {
 
 .testimonial-text {
     display: flex;
-
 }
 
 .quote-icon {
-
     margin-right: 15px;
 }
 
@@ -505,27 +523,13 @@ header {
     margin-left: 48px;
 }
 
-
-
-
-
 /* faq-section */
 
 .faq-container {
     max-width: 995px;
     margin: 50px auto;
     font-family: 'Poppins', sans-serif;
-
 }
-
-h2 {
-    font-size: 56px;
-    line-height: 66px;
-    font-weight: 700;
-    color: #333333;
-}
-
-
 
 .faq {
     border: 2px solid #6248FF;
@@ -545,11 +549,10 @@ h2 {
     cursor: pointer;
 }
 
-
-
 .faq-title {
     font-family: 'Poppins', sans-serif;
     font-size: 24px;
+    line-height: auto;
     font-weight: 700;
     color: #333333;
 }
@@ -564,14 +567,14 @@ h2 {
 .faq-answer {
     display: none;
     font-family: "Montserrat", sans-serif;
-    padding: 15px 20px;
+    padding: 24px 20px 32px 40px;
     font-size: 16px;
     line-height: 27px;
     color: rgba(79, 79, 79, 1.0);
+    max-width: 770px;
 
 }
 
-/* Відкритий стан */
 .faq.open .faq-answer {
     display: block;
 }
@@ -654,62 +657,91 @@ h2 {
 
 .contact-form-container {
     flex: 1;
-    background: white;
-    padding: 80px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border: 2px solid #6248FF;
     max-width: 585px;
-    max-height: 471px;
+    padding: 80px;
+    background: #fff;
+    border-radius: 16px;
+    border: 2px solid #6248FF;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 form {
+    width: 100%;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    max-width: 425px;
-
+    align-items: center;
 }
 
 input,
 textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 12px;
+    margin-bottom: 16px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    font-family: 'Poppins', sans-serif;
-}
-
-textarea {
-    height: 80px;
-    resize: none;
-}
-
-.btn-contact {
-    width: 167px;
-    height: 54px;
-    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
     font-size: 16px;
-    font-weight: bold;
-    line-height: 14px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus,
+textarea:focus {
+    border: 2px solid #6248FF;
+    outline: none;
+}
+
+input.valid,
+textarea.valid {
+    border: 2px solid green;
+}
+
+input.error,
+textarea.error {
+    border: 2px solid red;
 }
 
 .error-message {
     color: red;
     font-size: 14px;
-    margin-top: 10px;
+    display: none;
 }
 
-.success-message {
-    color: green;
-    font-size: 14px;
-    margin-top: 10px;
+
+.btn-contact {
+    width: 164px;
+    height: 54px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    line-height: 14px;
+    background: #6248FF;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-contact:disabled {
+    background: #ccc;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.btn-contact:hover:not(:disabled) {
+    background: #4F62F6;
+    transform: scale(1.02);
+}
+
+.btn-contact:active:not(:disabled) {
+    background: #3A50E0;
+    transform: scale(0.98);
 }
 
 /* footer-container */
-
 .footer-container {
     display: flex;
     justify-content: space-between;
@@ -787,20 +819,16 @@ textarea {
     color: #6248FF;
 }
 
-/* Стилізація нижнього футера */
 .footer-bottom {
     padding: 20px 0;
-
 }
 
 .footer-container-bottom {
-
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     color: #666;
 }
 
-/* Посилання в один рядок */
 .footer-bottom-links {
     display: flex;
     justify-content: space-between;
@@ -820,25 +848,17 @@ textarea {
     color: #6248FF;
 }
 
-
-
-
-
-
-
-
-
 /* Tablet 768px */
 
 
-@media (max-width: 768px) {
+@media (max-width: 600px),
+(max-width: 768px) {
     .container {
         padding: 0 40px;
     }
 
     .nav {
         padding: 20px 40px 0 56px;
-
     }
 
     .nav ul {
@@ -877,7 +897,6 @@ textarea {
     }
 
     .title {
-
         font-size: 40px;
         line-height: 44px;
     }
@@ -906,13 +925,11 @@ textarea {
         min-height: 263px;
     }
 
-
     .border-box-right {
         width: 293px;
         height: 100px;
         left: 260px;
         top: 140px;
-
     }
 
     .border-box-left {
@@ -923,15 +940,10 @@ textarea {
     }
 
     /* testimonials-section */
-
     .testimonials {
         display: flex;
         flex-direction: column;
     }
-
-
-
-    .testimonial-header-title {}
 
     .testimonial {
         display: flex;
@@ -1005,14 +1017,16 @@ textarea {
     .contact-info {
         padding-right: 0;
         margin-bottom: 20px;
+        max-width: 509px;
+    }
+
+    .contact-info .title {
+        text-align: center;
     }
 
     .contact-form-container {
-        width: 100%;
+        max-width: 509px;
     }
-
-
-
 
     /* footer-768 */
     .footer-container {
@@ -1070,7 +1084,9 @@ textarea {
 
 /* Mobile 320px */
 
-@media (max-width: 320px) {
+@media (max-width: 320px),
+(max-width: 375px),
+(max-width: 431px) {
     .container {
         padding: 0 20px;
     }
@@ -1096,13 +1112,11 @@ textarea {
     }
 
     .banner-image .banner-img {
-
         width: 280px;
         height: 301px;
     }
 
     .title {
-
         font-size: 40px;
         line-height: 44px;
     }
@@ -1126,13 +1140,11 @@ textarea {
     .box-right {
         display: flex;
         justify-content: center;
-
     }
 
     .box-left {
         display: flex;
         justify-content: center;
-
     }
 
     .step-bottom {
@@ -1164,7 +1176,6 @@ textarea {
         min-height: 307px;
     }
 
-
     .border-box-right {
         display: none;
 
@@ -1174,16 +1185,16 @@ textarea {
         display: none;
     }
 
-
-
-
     .faq-title {
         font-size: 18px;
     }
 
     .contact-form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 48px 16px;
-        max-width: 280px;
+        max-width: 430px;
         max-height: 415px;
     }
 
@@ -1195,7 +1206,6 @@ textarea {
         display: flex;
         justify-content: space-between;
         align-items: center;
-
     }
 
     .controls-tablet .btn-control {
@@ -1212,18 +1222,18 @@ textarea {
         text-align: left;
     }
 
-.footer-navigation ul {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
+    .footer-navigation ul {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
 
-.footer-bottom-links  {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    text-align: left;
+    .footer-bottom-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        text-align: left;
 
-}
+    }
 }

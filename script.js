@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (currentIndex < totalSlides - 1) {
             currentIndex++;
         } else {
-            currentIndex = 0; // Повернення до першого слайда
+            currentIndex = 0; 
         }
         updateSlider();
     });
@@ -86,12 +86,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (currentIndex > 0) {
             currentIndex--;
         } else {
-            currentIndex = totalSlides - 1; // Перехід до останнього слайда
+            currentIndex = totalSlides - 1; 
         }
         updateSlider();
     });
 
-    // Автоматичне перемикання кожні 5 секунд
     setInterval(function () {
         nextBtn.click();
     }, 5000);
@@ -99,49 +98,69 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+/* faq-section */
 function toggleFAQ(selectedQuestion) {
     const allFAQs = document.querySelectorAll(".faq");
     
     allFAQs.forEach(faq => {
         if (faq.querySelector(".faq-question") === selectedQuestion) {
-            faq.classList.toggle("open"); // Відкриває/закриває поточне
+            faq.classList.toggle("open"); 
         } else {
-            faq.classList.remove("open"); // Закриває всі інші
+            faq.classList.remove("open"); 
         }
     });
 }
 
 
+/* Контейнер форми */
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactForm");
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const messageInput = document.getElementById("message");
+    const submitBtn = document.getElementById("submitBtn");
+    const emailError = document.getElementById("emailError");
 
-document.getElementById("contactForm").addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let message = document.getElementById("message").value.trim();
-    let errorMessage = document.getElementById("errorMessage");
-    let successMessage = document.getElementById("successMessage");
-
-    errorMessage.innerHTML = "";
-    successMessage.innerHTML = "";
-
-    // Валідація
-    if (name === "" || email === "" || message === "") {
-        errorMessage.innerHTML = "All fields are required!";
-        return;
+    function validateEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
     }
 
-    if (!validateEmail(email)) {
-        errorMessage.innerHTML = "Please enter a valid email address!";
-        return;
+    function checkFormValidity() {
+        const isNameValid = nameInput.value.trim() !== "";
+        const isEmailValid = validateEmail(emailInput.value.trim());
+        const isMessageValid = messageInput.value.trim() !== "";
+
+        nameInput.classList.toggle("valid", isNameValid);
+        nameInput.classList.toggle("error", !isNameValid);
+
+        emailInput.classList.toggle("valid", isEmailValid);
+        emailInput.classList.toggle("error", !isEmailValid);
+        emailError.style.display = isEmailValid ? "none" : "block";
+        emailError.textContent = isEmailValid ? "" : "Incorrect email type";
+
+        messageInput.classList.toggle("valid", isMessageValid);
+        messageInput.classList.toggle("error", !isMessageValid);
+
+        submitBtn.disabled = !(isNameValid && isEmailValid && isMessageValid);
     }
 
-    successMessage.innerHTML = "Your message has been sent successfully!";
-    document.getElementById("contactForm").reset();
+    nameInput.addEventListener("input", checkFormValidity);
+    emailInput.addEventListener("input", checkFormValidity);
+    messageInput.addEventListener("input", checkFormValidity);
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        checkFormValidity();
+
+        if (!submitBtn.disabled) {
+            alert("Повідомлення відправлено!");
+            form.reset();
+            submitBtn.disabled = true;
+
+            nameInput.classList.remove("valid", "error");
+            emailInput.classList.remove("valid", "error");
+            messageInput.classList.remove("valid", "error");
+        }
+    });
 });
-
-function validateEmail(email) {
-    let re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return re.test(email);
-}
