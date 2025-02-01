@@ -144,7 +144,6 @@ header {
 .menu-icon {
     display: none;
     margin-top: 12px;
-    /* margin: 20px auto; */
     width: 32px;
     height: 32px;
     cursor: pointer;
@@ -173,24 +172,19 @@ header {
     top: 12px;
 }
 
-.menu-icon:hover span:nth-child(2) {
+.menu-icon.active span:nth-child(2) {
     opacity: 0;
 }
 
-.menu-icon:hover span:first-child,
-.menu-icon:hover span:last-child {
+.menu-icon.active span:first-child {
     top: 6px;
-
-}
-
-.menu-icon:hover span:first-child {
     transform: rotate(45deg);
 }
 
-.menu-icon:hover span:last-child {
+.menu-icon.active span:last-child {
+    top: 6px;
     transform: rotate(-45deg);
 }
-
 
 .mobile-nav {
     display: none;
@@ -268,7 +262,6 @@ header {
     text-align: center;
     padding: 20px 0;
 }
-
 
 .banner-image {
     max-width: 520px;
@@ -361,7 +354,6 @@ header {
     color: #4F4F4F;
 }
 
-
 .box-left {
     display: flex;
     justify-content: flex-end;
@@ -391,7 +383,6 @@ header {
 }
 
 /* testimonials */
-
 .testimonials {
     display: flex;
     justify-content: space-between;
@@ -536,7 +527,6 @@ header {
 }
 
 /* faq-section */
-
 .faq-container {
     max-width: 995px;
     margin: 50px auto;
@@ -580,7 +570,6 @@ header {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Відповідь (початково закрита) */
 .faq-answer {
     max-height: 0;
     overflow: hidden;
@@ -594,14 +583,12 @@ header {
     transition: max-height 0.5s ease-in-out, opacity 0.4s ease-in-out, padding 0.4s ease-in-out;
 }
 
-/* Відкритий стан */
 .faq.open .faq-answer {
     opacity: 1;
     padding: 10px 40px 150px 40px;
     max-height: 600px;
 }
 
-/* Обертаємо "+" при відкритті */
 .faq.open .icon {
     transform: rotate(45deg);
 }
@@ -626,7 +613,6 @@ header {
     flex: 1;
     padding-right: 40px;
     font-family: 'Poppins', sans-serif;
-
 }
 
 .contact-info h2 {
@@ -674,7 +660,6 @@ header {
     line-height: 16px;
     font-weight: 700;
     color: #333333;
-
 }
 
 .contact-text a {
@@ -695,7 +680,6 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 
 form {
@@ -711,7 +695,7 @@ textarea {
     padding: 7px;
     margin-bottom: 16px;
     border-radius: 10px;
-    border: 1px solid #E0E0E0;
+    outline: 1px solid #E0E0E0;
     font-size: 16px;
     line-height: 26px;
     font-family: 'Montserrat', sans-serif;
@@ -721,8 +705,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-    border: 2px solid #6248FF;
-    outline: none;
+    outline: 2px solid #6248FF;
 }
 
 input.valid,
@@ -794,7 +777,6 @@ textarea.error {
     line-height: 16px;
     font-weight: 900;
     color: #000000;
-    /* margin-right: 160px; */
 }
 
 .footer-logo a {
@@ -887,8 +869,6 @@ textarea.error {
 }
 
 /* Tablet 768px */
-
-
 @media (max-width: 600px),
 (max-width: 768px) {
     .container {
@@ -992,8 +972,6 @@ textarea.error {
         flex-direction: column;
     }
 
-
-
     .testimonial {
         display: flex;
         flex-direction: column;
@@ -1081,7 +1059,6 @@ textarea.error {
         max-width: 509px;
     }
 
-    /* footer-768 */
     .footer-container {
         display: flex;
         flex-direction: column;
@@ -1120,7 +1097,6 @@ textarea.error {
     .footer-navigation ul {
         display: flex;
         justify-content: space-between;
-
     }
 
     .footer-bottom {
@@ -1132,12 +1108,9 @@ textarea.error {
         flex-direction: column;
         justify-content: center;
     }
-
 }
 
-
 /* Mobile 320px */
-
 @media (max-width: 320px),
 (max-width: 375px),
 (max-width: 431px) {
@@ -1266,10 +1239,12 @@ textarea.error {
         font-size: 18px;
         margin: 0;
     }
+
     .faq-answer {
         margin: 0;
 
     }
+
     .faq.open .faq-answer {
         opacity: 1;
         padding: 10px 20px 400px 20px;
